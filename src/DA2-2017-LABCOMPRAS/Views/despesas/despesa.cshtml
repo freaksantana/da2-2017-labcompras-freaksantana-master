@@ -1,9 +1,21 @@
-﻿@{
+﻿@model DA2_2017_LABCOMPRAS.Models.Despesa
+@{
     Layout = "NewLayout";
 }
 <div class="container">
     <div class="jumbotron">
         <p> @ViewBag.Texto</p>
     </div>
-    <a asp-action="NovaDespesa">Despesa</a>
+        <div class="well">
+
+        <strong>NomeDespesa:	</strong>@Model.NomeDespesa
+        <strong>Quantidade:	</strong>@Model.Quantidade
+        <strong>Valor:	</strong>@Model.Valor
+        <strong>Categoria:	</strong>@Model.Categoria
+        <strong>Pago:	</strong>@Model.Pago
+    </div>
+    <div>
+        <a asp-action="NewProduct">Novo	Produto</a>
+    </div>
+   
 </div>
