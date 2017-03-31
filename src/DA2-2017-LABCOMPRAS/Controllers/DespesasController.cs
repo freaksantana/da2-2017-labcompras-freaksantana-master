@@ -14,13 +14,30 @@ namespace DA2_2017_LABCOMPRAS.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            Models.Despesa despesa = new Models.Despesa("Conta da Luz", 5, 100, "EDP", false);
-            return View(despesa);
+             ViewBag.Texto = "Bem-Vindo ao site das Despesas!";
+            Models.Despesa outradespesa = new Models.Despesa("Conta da Luz", 5, 100, "EDP", false);
+            return View(outradespesa);
         }
 
+        [HttpGet]
         public IActionResult NovaDespesa()
         {
             ViewBag.Texto = "Bem-Vindo ao site das Despesas!";
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult NovaDespesa(Despesa obj)
+        {
+
+            ViewBag.Texto = "Bem-Vindo ao site das Despesas!";
+            return View("DespesaConfirmada", obj);
+        }
+
+      
+        public IActionResult DespesaConfirmada()
+        {
+            ViewBag.Texto = "Confirme a sua despesa.";
             return View();
         }
     }

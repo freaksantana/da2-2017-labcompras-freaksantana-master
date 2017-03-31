@@ -1,4 +1,5 @@
-﻿@{
+﻿@model DA2_2017_LABCOMPRAS.Models.Despesa
+@{
     Layout = "NewLayout";
 }
 <div class="container">
@@ -6,7 +7,19 @@
         <p> @ViewBag.Texto</p>
     </div>
 
-    <button asp-action="NovaDespesa" class="btn btn-default">
+    <div class="well">
+
+        <strong>NomeDespesa:	</strong>@Model.NomeDespesa
+        <strong>Quantidade:	</strong>@Model.Quantidade
+        <strong>Valor:	</strong>@Model.Valor
+        <strong>Categoria:	</strong>@Model.Categoria
+        <strong>Pago:	</strong>@Model.Pago
+    </div>
+    <div>
+        <a asp-action="NovaDespesa">Nova Despesa</a>
+    </div>
+
+    <button asp-controller="DespesasController" asp-action="NovaDespesa" class="btn btn-default">
         <span class="glyphicon glyphicon-plus-sign"> </span>
             Despesas     
     </button>

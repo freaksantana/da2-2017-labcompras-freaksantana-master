@@ -44,6 +44,21 @@ namespace DA2_2017_LABCOMPRAS.Models
             set { m_pago = value; }
         }
 
+
+        public Despesa(string nome, int quantidade, double valor, string categoria, bool pago)
+        {
+            m_nomedespesa = nome;
+            m_quantidade = quantidade;
+            m_valor = valor;
+            m_categoria = categoria;
+            m_pago = pago;
+        }
+
+        public Despesa()
+        {
+
+        }
+
   
 
 

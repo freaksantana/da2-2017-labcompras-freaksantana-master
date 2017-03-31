@@ -6,7 +6,7 @@
     <div class="jumbotron">
         <p> @ViewBag.Texto</p>
     </div>
-        <div class="well">
+    <div class="well">
 
         <strong>NomeDespesa:	</strong>@Model.NomeDespesa
         <strong>Quantidade:	</strong>@Model.Quantidade
@@ -15,7 +15,13 @@
         <strong>Pago:	</strong>@Model.Pago
     </div>
     <div>
-        <a asp-action="NewProduct">Novo	Produto</a>
+        <a asp-action="NovaDespesa">Confirmar Despesa</a>
     </div>
-   
+
+    <button asp-controller="DespesasController" asp-action="NovaDespesa" class="btn btn-default">
+        <span class="glyphicon glyphicon-plus-sign"> </span>
+       Voltar às Despesas
+    </button>
+
+
 </div>

@@ -1,0 +1,44 @@
+﻿@model DA2_2017_LABCOMPRAS.Models.Despesa
+@{
+    Layout = "NewLayout";
+}
+<div class="container">
+    <div class="jumbotron">
+        <p> @ViewBag.Texto</p>
+    </div>
+        <div class="well">
+            <form asp-action="NovaDespesa" asp-controller="Despesas" method="post">
+                <p>
+                    <label asp-for="NomeDespesa">NomeDespesa:</label>
+                    <input asp-for="NomeDespesa" />
+                </p>
+                <p>
+                    <label asp-for="Quantidade" >Quantidade:</label>
+                    <input asp-for="Quantidade" value="1"/>
+                </p>
+                <p>
+                    <label asp-for="Valor">Valor:</label>
+                    <input asp-for="Valor" />
+                    </p>
+                <p>
+                    <label asp-for="Categoria">Categoria:</label>
+                    <select asp-for="Categoria">
+                        <option value="Alimentar">Alimentar</option>
+                        <option value="Roupa">Roupa</option>
+                        <option value="Transporte">Transporte</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Pessoal">Pessoal</option>
+                    </select>
+                </p>
+                <p>
+                    <label asp-for="Pago">Pago:</label>
+                    <select asp-for="Pago">
+                        <option value="Sim">Sim</option>
+                        <option value="Não" selected>Não</option>
+                    </select>
+                </p>
+                <button type="submit">Confirmar Despesa</button>
+            </form>
+    </div>
+  
+</div>
