@@ -8,9 +8,10 @@
     </div>
         <div class="well">
             <form asp-action="NovaDespesa" asp-controller="Despesas" method="post">
+                <div asp-validation-summary="All"></div>
                 <p>
                     <label asp-for="NomeDespesa">NomeDespesa:</label>
-                    <input asp-for="NomeDespesa" />
+                    <input asp-for="NomeDespesa" required />
                 </p>
                 <p>
                     <label asp-for="Quantidade" >Quantidade:</label>
@@ -18,11 +19,11 @@
                 </p>
                 <p>
                     <label asp-for="Valor">Valor:</label>
-                    <input asp-for="Valor" />
+                    <input asp-for="Valor" required />
                     </p>
                 <p>
                     <label asp-for="Categoria">Categoria:</label>
-                    <select asp-for="Categoria">
+                    <select asp-for="Categoria" required>
                         <option value="Alimentar">Alimentar</option>
                         <option value="Roupa">Roupa</option>
                         <option value="Transporte">Transporte</option>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace DA2_2017_LABCOMPRAS.Models
 {
@@ -13,6 +14,7 @@ namespace DA2_2017_LABCOMPRAS.Models
         private string m_categoria;
         private bool m_pago;
 
+        [Required(ErrorMessage = "Por favor introduza o	seu	Nome")]
         public string NomeDespesa
         {
             get { return m_nomedespesa; }
@@ -25,13 +27,14 @@ namespace DA2_2017_LABCOMPRAS.Models
             set { m_quantidade = value; }
         }
 
+        [Required(ErrorMessage = "Por favor	introduza o Valor")]
         public double Valor
         {
             get { return m_valor; }
             set { m_valor = value; }
         }
 
-
+        [Required(ErrorMessage = "Por favor	introduza a Categoria")]
         public string Categoria
         {
             get { return m_categoria; }

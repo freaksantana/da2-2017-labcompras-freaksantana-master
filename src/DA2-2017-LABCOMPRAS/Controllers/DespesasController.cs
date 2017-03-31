@@ -29,9 +29,13 @@ namespace DA2_2017_LABCOMPRAS.Controllers
         [HttpPost]
         public IActionResult NovaDespesa(Despesa obj)
         {
-
-            ViewBag.Texto = "Bem-Vindo ao site das Despesas!";
-            return View("DespesaConfirmada", obj);
+            if (ModelState.IsValid)
+            {
+                return View("DespesaConfirmada", obj);
+            }
+            else
+                return View();
+    
         }
 
       
