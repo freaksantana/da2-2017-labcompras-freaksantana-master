@@ -1,0 +1,34 @@
+﻿@model DA2_2017_LABCOMPRAS.Models.ContaBancaria
+@{
+    Layout = "NewLayout";
+}
+<div class="container">
+    <div class="jumbotron">
+        <p> @ViewBag.Texto</p>
+    </div>
+    <div class="well">
+
+        <strong>Nome Titular:	</strong>@Model.NomeTitular
+        <strong>Valor:	</strong>@Model.Saldo
+        <strong>Ativa:	</strong>
+        @if (Model.Ativa)
+        {
+            @:Sim
+												}
+        else
+        {
+            @:Não
+												}
+     
+    </div>
+    <div>
+        <a asp-action="NovaContaBancaria">Confirmar Conta Bancária</a>
+    </div>
+
+    <button asp-controller="ContaBancaria" asp-action="NovaContaBancaria" class="btn btn-default">
+        <span class="glyphicon glyphicon-plus-sign"> </span>
+        Voltar às Contas Bancárias
+    </button>
+
+
+</div>
