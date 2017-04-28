@@ -30,18 +30,29 @@ namespace DA2_2017_LABCOMPRAS.Controllers
 
         public IActionResult Tempo()
         {
-            HttpClient client = new HttpClient();
-            string baseAddress = "http://api.apixu.com/";
-            client.BaseAddress = new Uri(baseAddress);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new
-            MediaTypeWithQualityHeaderValue("application/json"));
+            HttpClient client = MyHTTPClient.Client;
             string path = "v1/current.json?key=A_SUA_CHAVE&q=Albufeira";
             HttpResponseMessage response = client.GetAsync(path).Result;
-            WeatherApiResponse wc = response.Content.ReadAsAsync<WeatherApiResponse>().Result;
-
-            return View(wc);
+            WeatherApiResponse wr =
+response.Content.ReadAsAsync<WeatherApiResponse>().Result;
+            return View(wr);
         }
-    }
+
+        public IActionResult ConverterMoeda()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ConverterMoeda(RequestData api)
+        {
+            HttpClient client = myHTTPClientCurrency.Client;
+            string path = "/api/CurrencyConvert";
+            HttpResponseMessage response = client.PostAsJsonAsync(path, api).Result;
+            ResponseData wr = response.Content.ReadAsAsync<ResponseData>().Result;
+            return View("ConvertidoMoeda", wr);
+        }
+
+          }
 }
 

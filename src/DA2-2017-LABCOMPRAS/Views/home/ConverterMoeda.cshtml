@@ -1,0 +1,33 @@
+﻿@model DA2_2017_LABCOMPRAS.Models.RequestData
+@{
+    Layout = "NewLayout";
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1> Converter Moeda</h1>
+    </div>
+
+</div>
+    <div class="well">
+        <form asp-action="ConverterMoeda" asp-controller="Home" method="post">
+            <div asp-validation-summary="All"></div>
+            <p>
+                <label asp-for="Amount">Amount</label>
+                <input asp-for="Amount" required />
+            </p>
+            <p>
+                <label asp-for="From">From</label>
+                <input asp-for="From" required />
+            </p>
+            <p>
+                <label asp-for="To">to</label>
+                <input asp-for="To" required />
+            </p>
+           
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</div>

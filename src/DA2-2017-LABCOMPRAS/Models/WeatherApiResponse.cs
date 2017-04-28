@@ -33,3 +33,7 @@ namespace DA2_2017_LABCOMPRAS.Models
                 public string Icon { get; set; }
             }
         }
+
+    
+    }
+}
